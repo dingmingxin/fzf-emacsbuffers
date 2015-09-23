@@ -8,6 +8,7 @@ export FZF_DEFAULT_OPTS='
 # fzf quickly access to emacs buffer
 febf() 
 {
+	#NOTICE: emacs must work in daemon mode
 	local EMACSCLIENT=$(which emacsclient)
 	buffers=$($EMACSCLIENT -e "(mapcar #'(lambda(x) (buffer-name x)) (buffer-list))")
 	local SYSTEM_TYPE=$(uname -a | awk '{print $1}')
